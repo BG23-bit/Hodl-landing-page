@@ -1,0 +1,49 @@
+import React from "react";
+
+export default function LandingPage() {
+  return (
+    <div className="min-h-screen bg-black text-white font-sans">
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center text-center px-6 py-24">
+        <h1 className="text-4xl md:text-6xl font-bold text-orange-500 mb-4">
+          Buy Bitcoin. Borrow Against It. Stack More.
+        </h1>
+        <p className="text-lg md:text-2xl mb-8 max-w-2xl">
+          Hodl is where Aussies buy Bitcoin and unlock its power – no selling required.
+        </p>
+        <a
+          href="mailto:contact@hodl.com"
+          className="bg-orange-500 text-black px-6 py-3 rounded-2xl text-lg font-semibold shadow-lg hover:bg-orange-600 transition"
+        >
+          Contact Us
+        </a>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="bg-white text-black py-16 px-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          How It Works
+        </h2>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-12 text-center">
+          <div className="p-6 rounded-2xl shadow-lg border">
+            <h3 className="text-xl font-semibold mb-2">1. Buy Bitcoin</h3>
+            <p>Get started by purchasing BTC through our trusted platform.</p>
+          </div>
+          <div className="p-6 rounded-2xl shadow-lg border">
+            <h3 className="text-xl font-semibold mb-2">2. Borrow Against It</h3>
+            <p>Use your Bitcoin as collateral to get an AUD loan – no selling required.</p>
+          </div>
+          <div className="p-6 rounded-2xl shadow-lg border">
+            <h3 className="text-xl font-semibold mb-2">3. Stack More</h3>
+            <p>Keep your Bitcoin and access cash when you need it. Simple.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="text-center text-sm text-gray-400 py-6">
+        © {new Date().getFullYear()} Hodl. All rights reserved. | contact@hodl.com
+      </footer>
+    </div>
+  );
+}
