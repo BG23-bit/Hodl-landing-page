@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hodl Landing Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-black text-white font-sans">
+  <section class="flex flex-col items-center justify-center text-center px-6 py-24">
+    <h1 class="text-4xl md:text-6xl font-bold text-orange-500 mb-4">Buy Bitcoin. Borrow Against It. Stack More.</h1>
+    <p class="text-lg md:text-2xl mb-8 max-w-2xl">Hodl is where Aussies buy Bitcoin and unlock its power – no selling required.</p>
+    <button id="contactBtn" class="bg-orange-500 text-black px-6 py-3 rounded-2xl text-lg font-semibold shadow-lg hover:bg-orange-600 transition">Contact Us</button>
+  </section>
+
+  <section class="bg-white text-black py-16 px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">How It Works</h2>
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-12 text-center">
+      <div class="p-6 rounded-2xl shadow-lg border">
+        <h3 class="text-xl font-semibold mb-2">1. Buy Bitcoin</h3>
+        <p>Get started by purchasing BTC through our trusted platform.</p>
+      </div>
+      <div class="p-6 rounded-2xl shadow-lg border">
+        <h3 class="text-xl font-semibold mb-2">2. Borrow Against It</h3>
+        <p>Use your Bitcoin as collateral to get an AUD loan – no selling required.</p>
+      </div>
+      <div class="p-6 rounded-2xl shadow-lg border">
+        <h3 class="text-xl font-semibold mb-2">3. Stack More</h3>
+        <p>Keep your Bitcoin and access cash when you need it. Simple.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center text-sm text-gray-400 py-6">
+    &copy; <span id="year"></span> Hodl. All rights reserved. | contact@hodl.com
+  </footer>
+
+  <div id="toast" class="hidden fixed bottom-6 right-6 bg-orange-500 text-black px-4 py-2 rounded shadow-lg transition-opacity"></div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('contactBtn').addEventListener('click', function () {
+      const toast = document.getElementById('toast');
+      toast.textContent = 'Thanks for reaching out!';
+      toast.classList.remove('hidden');
+      toast.style.opacity = 0;
+      setTimeout(() => {
+        toast.style.opacity = 1;
+      }, 10);
+      setTimeout(() => {
+        toast.style.opacity = 0;
+        setTimeout(() => toast.classList.add('hidden'), 500);
+      }, 3000);
+      window.location.href = 'mailto:contact@hodl.com';
+    });
+  </script>
+</body>
+</html>
